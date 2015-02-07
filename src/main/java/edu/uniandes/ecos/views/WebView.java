@@ -30,7 +30,7 @@ public class WebView {
             //Muestra los valores de la lista 1 con que se calculo el proceso
             html += "<br> Valores Lista 1:";
             for (Double valorLista : objProbe.getLista1()) {
-                System.out.println("- " + valorLista);
+                html += "<br>- " + valorLista;
             }
             
             //Muestra los valores de la lista 2 con que se calculo el proceso
