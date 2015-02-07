@@ -1,6 +1,7 @@
 package edu.uniandes.ecos;
 
 import edu.uniandes.ecos.data.DataSourcePSP10;
+import edu.uniandes.ecos.data.DataSourceResultadosPSP10;
 import edu.uniandes.ecos.psp.MetodoPROBE;
 import edu.uniandes.ecos.views.ConsolaView;
 import java.util.LinkedList;
@@ -38,6 +39,15 @@ public class App
         MetodoPROBE test4 = new MetodoPROBE();
         test4.CalcularPROBE(xK, datos.getPlanAddedModified(), datos.getActualDevelopmentHours());
         listaPruebas.add(test4);
+        
+        DataSourceResultadosPSP10 datosReales = new DataSourceResultadosPSP10();
+        MetodoPROBE datosRealesPspLOC = new MetodoPROBE();
+        datosRealesPspLOC.CalcularPROBE(112, datosReales.getPlanAddedModified(), datosReales.getActualAddedModified());
+        listaPruebas.add(datosRealesPspLOC);
+        
+        MetodoPROBE datosRealesPspTiempo = new MetodoPROBE();
+        datosRealesPspTiempo.CalcularPROBE(112, datosReales.getPlanAddedModified(), datosReales.getActualDevelopmentHours());
+        listaPruebas.add(datosRealesPspTiempo);
         
         //Llama la vista y muestra los resultados
         ConsolaView vista = new ConsolaView();
